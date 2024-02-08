@@ -1,0 +1,47 @@
+<div class="products-container">
+    <span class="title" >{{title}}</span>
+    <span class="title">cart: {{cart_id}}</span>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TITLE</th>
+                    <th>DESCRIPTION</th>
+                    <th>CODE</th>
+                    <th>PRICE</th>
+                    <th>STOCK</th>
+                    <th>CATEGORY</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                    <td>{{this._id}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.code}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.stock}}</td>
+                     <td>{{this.category}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+</div>
+
+<script src="/static/js/socket.js"></script>
+
+<div class="add-product-container">
+   <span class="title" >AGREGAR PRODUCTOS</span>
+  <form id="new-product-form-delete" action="/" method="post" >
+
+    <label for="id">Id</label>
+    <input type="hidden" id="cart-id" name="CART-ID" value="{{cart_id}}">
+    <input type="text" id="add-id" name="ID" placeholder="ID">
+    <input type="number" id="add-quantity" name="QUANTITY" placeholder="QUANTITY">
+
+    <button id="submit-add-product" type="submit" value="submit">AGREGAR AL CARRITO</button>
+    <div id="error-description-delete"></div>
+    <div id="success-description-delete"></div>
+  </form>
+</div>

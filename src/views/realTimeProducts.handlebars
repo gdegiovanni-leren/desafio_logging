@@ -1,0 +1,66 @@
+
+<div class="products-container">
+    <span class="title" >{{title}}</span>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TITLE</th>
+                    <th>DESCRIPTION</th>
+                    <th>CODE</th>
+                    <th>PRICE</th>
+                    <th>STOCK</th>
+                    <th>CATEGORY</th>
+                </tr>
+            </thead>
+            <tbody class="products-tbody">
+            </tbody>
+        </table>
+</div>
+
+<script src="/static/js/socket.js"></script>
+
+
+<div class="new-product-container">
+   <span class="title" >NUEVO PRODUCTO</span>
+  <form id="new-product-form" action="/" method="post" >
+
+    <label for="title">Title</label>
+    <input type="text" id="p-title" name="titulo" placeholder="Title...">
+
+     <label for="description">Description</label>
+    <textarea id="p-description" name="description" placeholder="Description..." style="height:100px"></textarea>
+
+     <label for="code">Code</label>
+    <input type="text" step="0.01" id="p-code" name="Code" placeholder="Code">
+
+    <label for="price">Price</label>
+    <input type="number" step="0.01" id="p-price" name="Price" placeholder="Price">
+
+    <label for="stock">Stock</label>
+    <input type="number" id="p-stock" name="Stock" placeholder="Stock">
+
+     <label for="category">Category</label>
+    <input type="text" id="p-category" name="Category" placeholder="Category">
+
+
+    <button id="submit-product" type="submit" value="submit">CREAR</button>
+    <div id="error-description"></div>
+    <div id="success-description"></div>
+  </form>
+</div>
+
+
+<div class="delete-product-container">
+   <span class="title" >ELIMINAR PRODUCTO</span>
+  <form id="new-product-form-delete" action="/" method="post" >
+
+    <label for="id">Id</label>
+    <input type="text" id="p-id" name="ID" placeholder="ID">
+
+
+    <button id="submit-product-delete" type="submit" value="submit">ELIMINAR</button>
+    <div id="error-description-delete"></div>
+    <div id="success-description-delete"></div>
+  </form>
+</div>

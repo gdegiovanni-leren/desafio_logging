@@ -1,0 +1,34 @@
+<div class="header-options">
+    <a href="/api/session/logout">Logout</a>
+</div>
+<div class="products-container">
+    <h1>Bienvenido {{user.last_name }}, {{user.first_name}} </h1>
+    <h3>Rol: {{ user.role }} </h3>
+    <span class="title" >{{title}}</span>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TITLE</th>
+                    <th>DESCRIPTION</th>
+                    <th>CODE</th>
+                    <th>PRICE</th>
+                    <th>STOCK</th>
+                    <th>CATEGORY</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.code}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.stock}}</td>
+                     <td>{{this.category}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+</div>
